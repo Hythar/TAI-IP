@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TO-DO LIST</title>
+</head>
+<body class="light">
+    <div class="container">
+        <div class="todo-app">
+            <div class="header">
+                <h2>TO-DO LIST</h2>
+                <img src="img/icon.png" alt="Icon" class="todo-icon">
+                <img class="theme-icon" src="" id="theme-toggle" alt="">
+            </div>
+
+            <!--<h2>TO-DO LIST <img src="img/icon.png" alt="Icon"> 
+                
+                <img class="theme-btn" src="" id="theme-toggle">
+            </h2>-->
+            
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add your new task">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container"></ul>
+
+            <div class="footer">
+                <span id="items-left">0 items left</span>
+                <div class="filters">
+                    <button id="all" onclick="filterTasks('all')">All</button>
+                    <button id="active" onclick="filterTasks('active')">Active</button>
+                    <button id="completed" onclick="filterTasks('completed')">Completed</button>
+                </div>
+                <button id="clear-completed" onclick="clearCompletedTasks()">Clear Completed</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

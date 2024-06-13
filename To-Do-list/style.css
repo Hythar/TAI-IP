@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.3s ease, color 0.2s ease;
+}
+
+body.light {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark {
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light .container {
+    background: linear-gradient(180deg, #3b73e2, #ccc0cf, #d33535);
+}
+
+body.dark .container {
+    background: linear-gradient(180deg, #ffffff, #2e2e2e, #0a0a0a);
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: linear-gradient(180deg, #d33535, #ccc0cf, #3b73e2);
+    border-radius: 10px;
+    margin: 100px auto;
+    padding: 40px 30px 70px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .todo-app {
+    background: linear-gradient(180deg, #0a0a0a, #2e2e2e, #ffffff);
+    box-shadow: 0 0 20px rgba(67, 22, 189, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    color: #002765;
+    margin-right: auto;
+}
+
+body.dark .header h2 {
+    color: #fff;
+}
+
+.header .todo-icon {
+    width: 30px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header .theme-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+body.dark .header .theme-icon {
+    filter: invert(1);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #d3d0d0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+body.dark .row {
+    background: #ffffff;
+    color: #000;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+body.dark input {
+    color: #ac2020;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+body.dark button {
+    background: #5f30ce;
+}
+
+.theme-icon {
+    border: 50px;
+    outline: none;
+    background-image: url('img/sun-light.png');
+    padding: 10px 10px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    margin-left: 10px;
+    background-size: cover;
+    background-position: right center;
+}
+
+body.dark .theme-icon {
+    
+    color: #fff;
+    background-image: url('img/dark-theme.png');
+}
+
+.theme-icon:hover {
+    color: #000;
+
+}
+
+body.dark .theme-icon:hover {
+    
+    color: #ff5945;
+
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url('img/unchecked.png');
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #000;
+    text-decoration: line-through;
+}
+
+body.dark ul li.checked {
+    color: #ffffff;
+    text-decoration: line-through;
+
+}
+
+ul li.checked::before {
+    background-image: url('img/checked.png');
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}
+
+body.dark ul li span:hover {
+    background: #555;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#items-left {
+    transition: color 0.3s;
+}
+
+.filters button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background: #e53935;
+    color: white;
+    border-radius: 5px;
+}
+#filters.dark button {
+    background: #e53935;
+    color: #ffffff;
+}
+
+#clear-completed {
+    padding: 5px 10px;
+    border: none;
+    background: #e53935;
+    color: white;
+    border-radius: 5px;
+}
+
+body.dark #clear-completed {
+    background: #6200ea;
+    color: #ffffff;
+}
